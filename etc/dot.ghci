@@ -1,0 +1,5 @@
+:set prompt "λ> "
+:set prompt-cont " | "
+:set +t
+:set +m
+:set -XOverloadedStrings -XTypeApplications
