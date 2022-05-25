@@ -39,7 +39,7 @@ if type -f hlint >/dev/null 2>&1; then
   hlint --no-summary .
 else
   curl -sSL https://raw.github.com/ndmitchell/hlint/master/misc/run.sh |
-    sh -s --no-summary .
+    sh -s -- --no-summary .
 fi
 
 # Are there any unbounded packages?
