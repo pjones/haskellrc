@@ -44,8 +44,12 @@
         };
       });
 
-      homeManagerModules.default = { pkgs, ... }: {
-        config = {
+      homeManagerModules.default = { config, pkgs, lib, ... }: {
+        options.programs.pjones.haskellrc = {
+          enable = lib.mkEnableOption "Install Haskell configuration files.";
+        };
+
+        config = lib.mkIf config.programs.pjones.haskellrc.enable {
           home.file = {
             ".ghci".source =
               "${self.packages.${pkgs.system}.default}/etc/dot.ghci";
